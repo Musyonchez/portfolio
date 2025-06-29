@@ -208,47 +208,49 @@ const Navbar: FC<{}> = () => {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${hasScrolled ? "bg-black/80 backdrop-blur-lg border-b border-white/10" : "bg-transparent"}`}
-    >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex justify-between items-center h-20">
-          <Link
-            href="#home"
-            className="text-xl font-bold tracking-widest text-white"
-          >
-            PHILIP.DEV
-          </Link>
+    <>
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${hasScrolled ? "bg-black/80 backdrop-blur-lg border-b border-white/10" : "bg-transparent"}`}
+      >
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex justify-between items-center h-20">
+            <Link
+              href="#home"
+              className="text-xl font-bold tracking-widest text-white"
+            >
+              PHILIP.DEV
+            </Link>
 
-          {/* Desktop Menu */}
-          <nav className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-gray-300 hover:text-white transition-colors duration-300"
-              >
-                {link.name}
-              </a>
-            ))}
-          </nav>
+            {/* Desktop Menu */}
+            <nav className="hidden md:flex items-center space-x-8">
+              {navLinks.map((link) => (
+                <a
+                  key={link.name}
+                  href={link.href}
+                  className="text-gray-300 hover:text-white transition-colors duration-300"
+                >
+                  {link.name}
+                </a>
+              ))}
+            </nav>
 
-          <a
-            href="#contact"
-            className="hidden md:inline-block bg-cyan-500 text-black font-bold py-2 px-5 rounded-md hover:bg-cyan-400 transition-all"
-          >
-            Contact Me
-          </a>
+            <a
+              href="#contact"
+              className="hidden md:inline-block bg-cyan-500 text-black font-bold py-2 px-5 rounded-md hover:bg-cyan-400 transition-all"
+            >
+              Contact Me
+            </a>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-white z-50"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="md:hidden text-white z-50"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
-      </div>
+      </header>
 
       {/* Mobile Menu */}
       <AnimatePresence>
@@ -257,7 +259,7 @@ const Navbar: FC<{}> = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="md:hidden fixed inset-0 bg-black/95 backdrop-blur-sm"
+            className="fixed inset-0 bg-black/95 backdrop-blur-sm z-40 md:hidden"
           >
             <motion.div
               initial={{ y: "-100%" }}
@@ -280,10 +282,9 @@ const Navbar: FC<{}> = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </header>
+    </>
   );
 };
-
 // --- COMPONENT: Hero ---
 const Hero: FC<{}> = () => (
   <Section id="home" className="min-h-screen flex items-center !py-0">
