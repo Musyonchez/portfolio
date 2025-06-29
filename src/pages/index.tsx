@@ -22,6 +22,7 @@ import {
   Layers,
   Zap,
 } from "lucide-react";
+import type { Variants } from "framer-motion";
 
 // --- CONFIGURATION & DATA ---
 // Centralized data for easy editing.
@@ -172,12 +173,15 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
+const itemVariants: Variants = {
   hidden: { y: 20, opacity: 0 },
   visible: {
     y: 0,
     opacity: 1,
-    transition: { type: "spring", stiffness: 100 },
+    transition: {
+      type: "spring" as const, // Ensure this is treated as a literal
+      stiffness: 100,
+    },
   },
 };
 
