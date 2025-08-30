@@ -131,19 +131,19 @@ export const Services: FC = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.3 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className="relative"
+              className="relative h-full"
             >
               {/* Connection Line */}
               {index < process.length - 1 && (
                 <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 -translate-x-4"></div>
               )}
               
-              <Card className="text-center relative z-10">
+              <Card className="text-center relative z-10 h-full flex flex-col">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-black font-black text-xl mb-6">
                   {step.step}
                 </div>
                 <h4 className="text-xl font-bold text-white mb-4">{step.title}</h4>
-                <p className="text-gray-400 leading-relaxed">{step.description}</p>
+                <p className="text-gray-400 leading-relaxed flex-grow">{step.description}</p>
               </Card>
             </motion.div>
           ))}
