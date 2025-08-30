@@ -89,6 +89,7 @@ export const Navbar: FC = () => {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] lg:hidden"
+            onClick={() => setIsMenuOpen(false)}
           >
             <motion.div
               initial={{ y: '-100%' }}
@@ -96,6 +97,7 @@ export const Navbar: FC = () => {
               exit={{ y: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
               className="flex flex-col items-center justify-between h-full relative py-4"
+              onClick={(e) => e.stopPropagation()}
             >
               {/* Close button inside dropdown */}
               <button
