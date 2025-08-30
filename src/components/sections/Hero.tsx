@@ -76,7 +76,7 @@ export const Hero: FC = () => {
             <Button href="#projects" variant="primary" size="lg">
               View My Work <ArrowRight size={20} />
             </Button>
-            <Button href="/musyoka-philip-resume.pdf" target="_blank" variant="outline" size="lg">
+            <Button href="/Musyoka_Philip_Resume_ATS.pdf" target="_blank" variant="outline" size="lg">
               <Download size={20} /> Download Resume
             </Button>
           </motion.div>
