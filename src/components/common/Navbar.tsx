@@ -100,7 +100,7 @@ export const Navbar: FC = () => {
               {/* Close button inside dropdown */}
               <button
                 onClick={() => setIsMenuOpen(false)}
-                className="absolute top-8 right-8 text-white hover:text-cyan-400 transition-colors p-2"
+                className="absolute top-1 right-3 text-white hover:text-cyan-400 transition-colors p-2"
               >
                 <X size={32} />
               </button>
