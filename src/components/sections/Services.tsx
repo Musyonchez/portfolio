@@ -133,10 +133,6 @@ export const Services: FC = () => {
               transition={{ duration: 0.6, delay: index * 0.2 }}
               className="relative h-full"
             >
-              {/* Connection Line */}
-              {index < process.length - 1 && (
-                <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-cyan-500/50 to-purple-500/50 -translate-x-4"></div>
-              )}
               
               <Card className="text-center relative z-10 h-full flex flex-col">
                 <div className="w-16 h-16 mx-auto bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full flex items-center justify-center text-black font-black text-xl mb-6">
