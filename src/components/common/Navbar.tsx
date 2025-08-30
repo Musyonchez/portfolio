@@ -72,7 +72,7 @@ export const Navbar: FC = () => {
             {/* Mobile Menu Button */}
             <motion.button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="lg:hidden text-white z-50 p-2"
+              className="lg:hidden text-white z-[70] p-2 relative"
               whileTap={{ scale: 0.9 }}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -88,15 +88,22 @@ export const Navbar: FC = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-40 lg:hidden"
+            className="fixed inset-0 bg-black/95 backdrop-blur-xl z-[60] lg:hidden"
           >
             <motion.div
               initial={{ y: '-100%' }}
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="flex flex-col items-center justify-center h-full space-y-8"
+              className="flex flex-col items-center justify-center h-full space-y-8 relative"
             >
+              {/* Close button inside dropdown */}
+              <button
+                onClick={() => setIsMenuOpen(false)}
+                className="absolute top-8 right-8 text-white hover:text-cyan-400 transition-colors p-2"
+              >
+                <X size={32} />
+              </button>
               {navLinks.map((item, index) => (
                 <motion.a
                   key={item.name}
