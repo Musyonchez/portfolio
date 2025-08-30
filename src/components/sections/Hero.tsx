@@ -30,7 +30,7 @@ const itemVariants = {
 
 export const Hero: FC = () => {
   return (
-    <Section id="home" className="min-h-screen flex items-center !py-0 relative overflow-hidden">
+    <Section id="home" className="min-h-screen flex items-center !py-0 !pt-20 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-cyan-500/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
@@ -44,13 +44,13 @@ export const Hero: FC = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="text-center lg:text-left space-y-8"
+          className="text-center lg:text-left space-y-6"
         >
-          <motion.div variants={itemVariants} className="space-y-4">
-            <div className="text-cyan-400 font-medium text-lg tracking-wider">
+          <motion.div variants={itemVariants} className="space-y-3">
+            <div className="text-cyan-400 font-medium text-base tracking-wider">
               FULL-STACK DEVELOPER
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black tracking-tight leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-tight">
               <span className="block text-white">Musyoka Philip</span>
               <span className="block bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent">
                 Mutuku
@@ -58,12 +58,12 @@ export const Hero: FC = () => {
             </h1>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="space-y-6">
-            <p className="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+          <motion.div variants={itemVariants} className="space-y-4">
+            <p className="text-lg md:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
               I craft <span className="text-cyan-400 font-semibold">innovative digital solutions</span> with 
               modern technologies, turning complex problems into elegant, scalable applications.
             </p>
-            <p className="text-lg text-gray-400 max-w-xl mx-auto lg:mx-0">
+            <p className="text-base text-gray-400 max-w-xl mx-auto lg:mx-0">
               Specializing in React, Next.js, TypeScript, and Node.js to build 
               exceptional user experiences from Nairobi, Kenya 🇰🇪
             </p>
@@ -71,7 +71,7 @@ export const Hero: FC = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start"
+            className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
           >
             <Button href="#projects" variant="primary" size="lg">
               View My Work <ArrowRight size={20} />
@@ -83,7 +83,7 @@ export const Hero: FC = () => {
 
           <motion.div
             variants={itemVariants}
-            className="flex items-center gap-8 justify-center lg:justify-start pt-8"
+            className="flex items-center gap-8 justify-center lg:justify-start pt-4"
           >
             <div className="text-center">
               <div className="text-2xl font-bold text-white">4+</div>
