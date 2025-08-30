@@ -95,7 +95,7 @@ export const Navbar: FC = () => {
               animate={{ y: 0 }}
               exit={{ y: '-100%' }}
               transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-              className="flex flex-col items-center justify-center h-full space-y-8 relative"
+              className="flex flex-col items-center justify-between h-full relative py-4"
             >
               {/* Close button inside dropdown */}
               <button
