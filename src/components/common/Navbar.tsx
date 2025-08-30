@@ -104,36 +104,37 @@ export const Navbar: FC = () => {
               >
                 <X size={32} />
               </button>
-              {navLinks.map((item, index) => (
-                <motion.a
-                  key={item.name}
-                  href={item.href}
-                  onClick={() => setIsMenuOpen(false)}
-                  className="text-2xl text-gray-300 hover:text-white transition-colors duration-300"
+              <div className="flex flex-col items-center justify-between flex-1 w-full">
+                {navLinks.map((item, index) => (
+                  <motion.a
+                    key={item.name}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="text-2xl text-gray-300 hover:text-white transition-colors duration-300"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ scale: 1.1 }}
+                  >
+                    {item.name}
+                  </motion.a>
+                ))}
+                
+                <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.1 }}
+                  transition={{ delay: navLinks.length * 0.1 }}
                 >
-                  {item.name}
-                </motion.a>
-              ))}
-              
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: navLinks.length * 0.1 }}
-                className="pt-8"
-              >
-                <Button 
-                  href="#contact" 
-                  variant="primary" 
-                  size="lg"
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Let's Talk
-                </Button>
-              </motion.div>
+                  <Button 
+                    href="#contact" 
+                    variant="primary" 
+                    size="lg"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Let's Talk
+                  </Button>
+                </motion.div>
+              </div>
             </motion.div>
           </motion.div>
         )}
